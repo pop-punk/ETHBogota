@@ -7,6 +7,7 @@ import { ConnectButton, useAccount } from "@web3modal/react";
 import { ethers } from "ethers";
 
 import { Web3Storage, File } from "web3.storage";
+import { cid } from '../utils/stores';
 
 function SignUp() {
   const [threshold, setThreshold] = useState("");
@@ -22,7 +23,7 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // Store addresses + threshold
-    const obj = { owner: address, threshold: threshold, addresses: [address1, address2] };
+    const obj = { owner: address, threshold: threshold, addresses: [address1, address2], passwords: [btoa(password1), btoa(password2)] };
     const buffer = Buffer.from(JSON.stringify(obj));
 
     const files = [
@@ -36,12 +37,15 @@ function SignUp() {
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweEZCNjE5MjJkYzk4QTI2QUMzQjJEOTQyYTMxNDNlMzRjNzYxMERkOTgiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjUyMTA0ODY5MjAsIm5hbWUiOiJTaWdjdXJlIn0.Mxck2M7MQP26yEXo4oZrWfznxk_O_BiVLpw2llqLGM4",
     });
 
-    const cid = await client.put(files)
+    console.log('cid before', cid);
+    const cidId = await client.put(files)
     console.log('stored files with cid:', cid)
+    cid.set(cidId);
 
-    console.log(address);
+    console.log('cid after', cid);
 
-    // Store passwords
+    navigate("/signin");
+
   };
 
   return (
