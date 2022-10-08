@@ -1,3 +1,3 @@
-import { atom } from 'nanostores';
+import { persistentAtom } from '@nanostores/persistent';
 
-export const cid = atom('foo');
+export const cid = persistentAtom('foo');

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../partials/Header";
+import { cid } from "../utils/stores";
+
+import { useSignMessage } from "@web3modal/react";
 
 function SignIn() {
+  const [signature, setSignature] = useState("");
+  const message = "Mickey Mouse Fuck Shit";
+  const { data, error, isLoading, signMessage } = useSignMessage({ message });
+  
+  const handleSubmit = async (event) => {
+    console.log('signing...');
+    event.preventDefault();
+    await signMessage();
+  }
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       {/*  Site header */}
@@ -17,6 +30,7 @@ function SignIn() {
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
                 <h1 className="h1">Access Your Passwords.</h1>
+                <h1>{data}</h1>
               </div>
 
               {/* Form */}
@@ -24,7 +38,10 @@ function SignIn() {
                 <form>
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">
+                      <button
+                        className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
+                        onClick={handleSubmit}
+                      >
                         Sign in
                       </button>
                     </div>
