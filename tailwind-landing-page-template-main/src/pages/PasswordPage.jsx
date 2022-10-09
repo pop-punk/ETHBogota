@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useEffectAsync } from "../utils/useEffectAsync";
 import Header from "../partials/Header";
+import Footer from "../partials/Footer";
 import { cid } from "../utils/stores";
 import { useAccount } from "@web3modal/react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -39,22 +40,23 @@ function PasswordPage() {
 
       {/*  Page content */}
       <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-100 to-white">
+        <section className="bg-gradient-to-b from-gray-900 to-gray-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h2 className="h2">Hello {formatAddress(address)}</h2>
+                <h1 className="h1">Hello {formatAddress(address)}</h1>
                 <h2 className="h2">Here are your passwords...</h2>
                 <br />
                 {passwords.map((password) => {
-                  return <h2 className="h2">{password}</h2>;
+                  return <h2 className="h2 text-yellow-500">{password}</h2>;
                 })}
               </div>
             </div>
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

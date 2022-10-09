@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import loading from "../images/loading.gif";
 
 import Header from "../partials/Header";
+import Footer from "../partials/Footer";
 import { cid } from "../utils/stores";
 
 import { useAccount } from "@web3modal/react";
@@ -94,24 +95,24 @@ function LoadingPage() {
 
       {/*  Page content */}
       <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-100 to-white">
+        <section className="bg-gradient-to-b from-gray-900 to-gray-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h2 className="h2">Hello {formatAddress(address)}</h2>
+                <h1 className="h1">Hello {formatAddress(address)}</h1>
                 <br />
                 {!isAdmin && (
                   <>
                     <h2 className="h2">Thanks for signing...</h2>
-                    <h2 className="h2">You're all set!</h2>
+                    <h2 className="h2">You're all set 🫡</h2>
                     <br />
                     <img src={loading} alt="loading..." />
                   </>
                 )}
                 {isAdmin && (
                   <>
-                    <h2 className="h2">Hang tight!</h2>
+                    <h2 className="h2">Hang tight 🐨</h2>
                     <h2 className="h2">We're waiting for more signatures!</h2>
                     <h3 className="h3">(we'll wait for 5 minutes)</h3>
                     <br />
@@ -123,6 +124,7 @@ function LoadingPage() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Header from "../partials/Header";
 import { cid } from "../utils/stores";
-import Footer from '../partials/Footer';
+import Footer from "../partials/Footer";
 import logoslim from "../images/logoslim.png";
 
 import { useSignMessage, useAccount, ConnectButton } from "@web3modal/react";
@@ -55,7 +55,7 @@ function SignIn() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       {/*  Site header */}
-      <Header showButtons={true}/>
+      <Header showButtons={true} />
 
       {/*  Page content */}
       <main className="flex-grow">
@@ -103,8 +103,8 @@ function SignIn() {
           </div>
         </section>
       </main>
-            {/*  Site footer */}
-            <Footer />
+      {/*  Site footer */}
+      <Footer />
     </div>
   );
 }
