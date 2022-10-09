@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useEffectAsync } from "../utils/useEffectAsync";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loading from "../images/loading.gif";
 
 import Header from "../partials/Header";
@@ -8,16 +8,20 @@ import { cid } from "../utils/stores";
 
 import { useAccount } from "@web3modal/react";
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function LoadingPage() {
   const [isAdmin, setIsAdmin] = useState(false);
-  const [timer, setTimer] = useState(undefined);
 
   const { address, connector, isConnected } = useAccount();
 
+  let navigate = useNavigate();
+
   useEffectAsync(async () => {
-    if (cid.get()) {
+    if (cid.get() && isConnected) {
       setIsAdmin(true); // SWITCH TO FALSE TO TEST NON-ADMIN USER
-      setTimer(Date.now());
 
       var headers = new Headers();
       headers.append("Content-Type", "application/json");
@@ -33,8 +37,49 @@ function LoadingPage() {
         requestOptions
       )
         .then((response) => response.json())
-        .then((result) => { return result } )
-      console.log(response);
+        .then((result) => {
+          return result;
+        });
+
+      const loginsAsArray = Object.entries(response);
+      const adminLogins = loginsAsArray.filter(
+        ([key, value]) => value === address
+      );
+      const lastAdminLogin = adminLogins[adminLogins.length - 1][0];
+
+      let sleepTime = 0;
+      let maxTime = 300000;
+
+      const ipfsLink = `https://${cid.get()}.ipfs.w3s.link/${address}.json`;
+      const resp = await fetch(ipfsLink);
+      const fileData = await resp.json();
+      const threshold = fileData.threshold;
+      const addresses = fileData.addresses;
+
+      while (sleepTime < maxTime) {
+        console.log(sleepTime);
+        await sleep(10000);
+        sleepTime += 10000;
+        const response = await fetch(
+          "https://getpantry.cloud/apiv1/pantry/d62c0d92-89f6-4ebc-bba6-085478243321/basket/logins",
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            return result;
+          });
+        const loginsAsArray = Object.entries(response);
+
+        const filtered = loginsAsArray.filter(
+          ([key, value]) =>
+            Number(key) > Number(lastAdminLogin) && addresses.includes(value)
+        );
+        if (filtered.length + 1 >= threshold) {
+          console.log("threshold reached");
+          break;
+        }
+      }
+      navigate("/passwords", { state: { thresholdReached: true } });
     }
   }, [address]);
 

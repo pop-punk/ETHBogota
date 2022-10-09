@@ -13,6 +13,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ResetPassword from "./pages/ResetPassword";
 import LoadingPage from "./pages/LoadingPage";
+import PasswordPage from "./pages/PasswordPage";
 
 const config = {
   projectId: '402c23e1dcd93e001de7bf2cc30343d4',
@@ -50,6 +51,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/loading" element={<LoadingPage />} />
+        <Route path="/passwords" element={<PasswordPage />} />
       </Routes>
       <Web3Modal config={config} />
     </>
