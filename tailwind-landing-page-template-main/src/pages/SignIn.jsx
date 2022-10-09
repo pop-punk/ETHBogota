@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Header from "../partials/Header";
 import { cid } from "../utils/stores";
+import Footer from '../partials/Footer';
+import logoslim from "../images/logoslim.png";
 
 import { useSignMessage, useAccount, ConnectButton } from "@web3modal/react";
 import { Web3Storage, File } from "web3.storage";
@@ -57,12 +59,12 @@ function SignIn() {
 
       {/*  Page content */}
       <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-900 to-gray-900">
+        <section className="bg-gradient-to-b from-gray-900 to-gray-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Access Your Passwords.</h1>
+                <h1 className="h1">Access your passwords.</h1>
               </div>
 
               {/* Form */}
@@ -95,11 +97,14 @@ function SignIn() {
                     Sign up
                   </Link>
                 </div>
+                <br />
               </div>
             </div>
           </div>
         </section>
       </main>
+            {/*  Site footer */}
+            <Footer />
     </div>
   );
 }

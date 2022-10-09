@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import Header from "../partials/Header";
+import Footer from '../partials/Footer';
 
 import { ConnectButton, useAccount } from "@web3modal/react";
 import { ethers } from "ethers";
@@ -48,12 +49,12 @@ function SignUp() {
 
       {/*  Page content */}
       <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-900 to-gray-900">
+        <section className="bg-gradient-to-b from-gray-900 to-gray-800">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h2">Get started today.</h1>
+                <h1 className="h1">Get started today.</h1>
 
               </div>
 
@@ -197,7 +198,12 @@ function SignUp() {
             </div>
           </div>
         </section>
-      </main>
+        </main>
+
+{/*  Site footer */}
+<Footer />
+
+      
     </div>
   );
 }

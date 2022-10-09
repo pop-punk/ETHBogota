@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Transition from '../utils/Transition';
 
-import FeaturesBg from '../images/features-bg.png';
-import FeaturesElement from '../images/features-element.png';
+import FeaturesBg from '../images/blankbg.png';
+import FeaturesElement from '../images/wallets.png';
+import push from "../images/push.png";
+import IPFS from "../images/IPFS.png";
 
 function Features() {
 
@@ -25,17 +27,11 @@ function Features() {
     <section className="relative">
 
       {/* Section background (needs .relative class on parent and next sibling elements) */}
-      <div className="absolute inset-0 bg-gray-900 pointer-events-none mb-16" aria-hidden="true"></div>
-      <div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
+
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
 
-          {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Sigcure Explained</h1>
-            <p className="text-xl text-gray-600">Traditional multisig wallets require multiple on chain signatures, each of which triggers a gas fee. Sigcure takes signature validation off chain to allow users to reap the security benefits of multisig technology without the burden of gas fees.</p>
-          </div>
 
           {/* Section content */}
           <div className="md:grid md:grid-cols-12 md:gap-6">
@@ -93,6 +89,7 @@ function Features() {
                     </svg>
                   </div>
                 </a>
+                <br />
               </div>
             </div>
 
@@ -112,8 +109,8 @@ function Features() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="500" height="462" alt="Features bg" />
-                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width="500" height="44" alt="Element" style={{ top: '30%' }} />
+                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="400" height="362" alt="Features bg" />
+                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width="300" height="44" alt="Element" style={{ top: '30%' }} />
                   </div>
                 </Transition>
                 {/* Item 2 */}
@@ -130,7 +127,7 @@ function Features() {
                 >
                   <div className="relative inline-flex flex-col">
                     <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="500" height="462" alt="Features bg" />
-                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width="500" height="44" alt="Element" style={{ top: '30%' }} />
+                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={IPFS} width="500" height="44" alt="Element" style={{ top: '30%' }} />
                   </div>
                 </Transition>
                 {/* Item 3 */}
@@ -146,9 +143,10 @@ function Features() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="500" height="462" alt="Features bg" />
-                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width="500" height="44" alt="Element" style={{ top: '30%' }} />
+                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg} width="400" height="362" alt="Features bg" />
+                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={push} width="300" height="44" alt="Element" style={{ top: '30%' }} />
                   </div>
+                  <br />
                 </Transition>
               </div>
             </div >
