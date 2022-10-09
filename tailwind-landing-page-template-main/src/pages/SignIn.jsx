@@ -25,7 +25,6 @@ function SignIn() {
 
   useEffect(() => {
     if (data) {
-      console.log("cid", cid);
       const now = Date.now().toString();
       var headers = new Headers();
       headers.append("Content-Type", "application/json");

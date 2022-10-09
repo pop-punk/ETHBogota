@@ -10,6 +10,8 @@ import { ethers } from "ethers";
 import { Web3Storage, File } from "web3.storage";
 import { cid } from '../utils/stores';
 
+import { sendNotification } from '../utils/Push';
+
 function SignUp() {
   const [threshold, setThreshold] = useState("");
   const [address1, setAddress1] = useState("");
@@ -38,6 +40,8 @@ function SignUp() {
     const cidId = await client.put(files)
     cid.set(cidId);
 
+    // sendNotification(address1, "You have been added to a Sigcure multisig!");
+    // sendNotification(address2, "You have been added to a Sigcure multisig!");
     navigate("/signin");
 
   };

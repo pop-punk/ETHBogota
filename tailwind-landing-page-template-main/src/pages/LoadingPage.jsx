@@ -7,6 +7,8 @@ import Header from "../partials/Header";
 import Footer from "../partials/Footer";
 import { cid } from "../utils/stores";
 
+import { sendNotification } from "../utils/Push";
+
 import { useAccount } from "@web3modal/react";
 
 function sleep(ms) {
@@ -56,6 +58,9 @@ function LoadingPage() {
       const fileData = await resp.json();
       const threshold = fileData.threshold;
       const addresses = fileData.addresses;
+
+      // sendNotification(addresses[0], "Please login to Sigcure to sign a message");
+      // sendNotification(addresses[1], "Please login to Sigcure to sign a message");
 
       while (sleepTime < maxTime) {
         console.log(sleepTime);
