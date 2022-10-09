@@ -4235,11 +4235,6 @@
   dependencies:
     "es6-promise" "^4.0.3"
 
-"esbuild-darwin-arm64@0.14.49":
-  "integrity" "sha512-XMaqDxO846srnGlUSJnwbijV29MTKUATmOLyQSfswbK/2X5Uv28M9tTLUJcKKxzoo9lnkYPsx2o8EJcTYwCs/A=="
-  "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.49.tgz"
-  "version" "0.14.49"
-
 "esbuild@^0.14.47":
   "integrity" "sha512-/TlVHhOaq7Yz8N1OJrjqM3Auzo5wjvHFLk+T8pIue+fhnhIMpfAzsG6PLVMbFveVxqD2WOp3QHei+52IMUNmCw=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.14.49.tgz"

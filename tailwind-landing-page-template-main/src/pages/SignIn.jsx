@@ -57,7 +57,7 @@ function SignIn() {
 
       {/*  Page content */}
       <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-100 to-white">
+        <section className="bg-gradient-to-b from-gray-900 to-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
@@ -71,7 +71,7 @@ function SignIn() {
                   <div className="flex flex-wrap -mx-3 mt-6">
                     {isConnected && (
                       <button
-                        className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
+                        className="btn text-white bg-yellow-500 hover:bg-yellow-400 w-full"
                         onClick={handleSubmit}
                       >
                         Sign in

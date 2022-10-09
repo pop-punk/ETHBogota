@@ -48,13 +48,13 @@ function SignUp() {
 
       {/*  Page content */}
       <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-100 to-white">
+        <section className="bg-gradient-to-b from-gray-900 to-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h2">Secure password management.</h1>
-                <h1 className="h2">Protected by multisig technology.</h1>
+                <h1 className="h2">Get started today.</h1>
+
               </div>
 
               {/* Form */}
@@ -73,7 +73,7 @@ function SignUp() {
                     )}
                     <div className="w-full px-3">
                       <label
-                        className="block text-gray-800 text-sm font-medium mb-1"
+                        className="block text-gray-300 text-sm font-medium mb-1"
                         htmlFor="threshold"
                       >
                         Signature Threshold{" "}
@@ -92,7 +92,7 @@ function SignUp() {
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label
-                        className="block text-gray-800 text-sm font-medium mb-1"
+                        className="block text-gray-300 text-sm font-medium mb-1"
                         htmlFor="address1"
                       >
                         Address #1 <span className="text-red-600">*</span>
@@ -110,7 +110,7 @@ function SignUp() {
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label
-                        className="block text-gray-800 text-sm font-medium mb-1"
+                        className="block text-gray-300 text-sm font-medium mb-1"
                         htmlFor="address2"
                       >
                         Address #2 <span className="text-red-600">*</span>
@@ -128,7 +128,7 @@ function SignUp() {
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label
-                        className="block text-gray-800 text-sm font-medium mb-1"
+                        className="block text-gray-300 text-sm font-medium mb-1"
                         htmlFor="password1"
                       >
                         Password #1 <span className="text-red-600">*</span>
@@ -146,7 +146,7 @@ function SignUp() {
                   <div className="flex flex-wrap -mx-3 mb-4">
                     <div className="w-full px-3">
                       <label
-                        className="block text-gray-800 text-sm font-medium mb-1"
+                        className="block text-gray-300 text-sm font-medium mb-1"
                         htmlFor="password2"
                       >
                         Password #2 <span className="text-red-600">*</span>
@@ -164,7 +164,7 @@ function SignUp() {
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
                       <button
-                        className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
+                        className="btn text-white bg-yellow-500 hover:bg-yellow-400 w-full"
                         onClick={handleSubmit}
                       >
                         Sign up
@@ -174,17 +174,17 @@ function SignUp() {
                 </form>
                 <div className="flex items-center my-6">
                   <div
-                    className="border-t border-gray-300 flex-grow mr-3"
+                    className="border-t border-gray-600 flex-grow mr-3"
                     aria-hidden="true"
                   ></div>
                   <div className="text-gray-600 italic">Or</div>
                   <div
-                    className="border-t border-gray-300 flex-grow ml-3"
+                    className="border-t border-gray-600 flex-grow ml-3"
                     aria-hidden="true"
                   ></div>
                 </div>
                 <form></form>
-                <div className="text-gray-600 text-center mt-6">
+                <div className="text-gray-500 text-center mt-6">
                   Already using Sigcure?{" "}
                   <Link
                     to="/signin"
