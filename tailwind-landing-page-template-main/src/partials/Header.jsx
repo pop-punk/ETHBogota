@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import FeaturesElement from '../images/features-element.png';
 import logocorner from "../images/logocorner.png";
 
-function Header() {
+function Header(showButtons) {
 
   const [top, setTop] = useState(true);
 
@@ -29,8 +29,8 @@ function Header() {
             </Link>
           </div>
 
-          {/* Site navigation */}
-          <nav className="flex flex-grow">
+          {showButtons.showButtons && (
+            <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
                 <Link to="/signin" className="font-medium text-gray-200 hover:text-gray-400 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign In</Link>
@@ -46,6 +46,7 @@ function Header() {
             </ul>
 
           </nav>
+          )}
 
         </div>
       </div>
