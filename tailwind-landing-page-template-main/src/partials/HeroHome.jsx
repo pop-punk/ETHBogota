@@ -4,6 +4,8 @@ import Modal from '../utils/Modal';
 import HeroImage from '../images/diagram.gif';
 import logoslim from "../images/logoslim.png"
 
+import { Link } from 'react-router-dom';
+
 function HeroHome() {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -43,10 +45,10 @@ function HeroHome() {
               
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="btn text-white bg-gray-600 hover:bg-gray-400 w-full mb-4 sm:w-auto sm:mb-0" href="/signin">Sign In</a>
+                  <Link to="/signin" className="btn text-white bg-gray-600 hover:bg-gray-400 w-full mb-4 sm:w-auto sm:mb-0">Sign In</Link>
                 </div>
                 <div>
-                  <a className="btn text-white bg-yellow-500 hover:bg-yellow-400 w-full sm:w-auto sm:ml-4" href="/signup">Sign Up</a>
+                  <Link to="/signup" className="btn text-white bg-yellow-500 hover:bg-yellow-400 w-full sm:w-auto sm:ml-4">Sign Up</Link>
                 </div>
               </div>
             </div>
