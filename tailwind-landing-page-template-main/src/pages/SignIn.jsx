@@ -24,12 +24,12 @@ function SignIn() {
 
       {/*  Page content */}
       <main className="flex-grow">
-        <section className="bg-gradient-to-b from-gray-100 to-white">
+        <section className="bg-gradient-to-b from-gray-900 to-gray-900">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-                <h1 className="h1">Access Your Passwords.</h1>
+                <h1 className="h1">Access your passwords.</h1>
                 <h1>{data}</h1>
               </div>
 
@@ -39,7 +39,7 @@ function SignIn() {
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
                       <button
-                        className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
+                        className="btn text-white bg-yellow-500 hover:bg-yellow-400 w-full"
                         onClick={handleSubmit}
                       >
                         Sign in
