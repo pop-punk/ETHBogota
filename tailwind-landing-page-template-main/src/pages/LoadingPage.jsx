@@ -7,7 +7,7 @@ import Header from "../partials/Header";
 import Footer from "../partials/Footer";
 import { cid } from "../utils/stores";
 
-import { sendNotification } from "../utils/Push";
+// import { sendNotification } from "../utils/Push";
 
 import { useAccount } from "@web3modal/react";
 
